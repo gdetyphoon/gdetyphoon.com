@@ -1,0 +1,27 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top, #0b0b0b, #050505 60%, #000);
+}
+
+/* лёгкая анимация фона */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.03), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,.03), transparent 40%);
+  animation: floatBg 12s linear infinite alternate;
+}
+
+@keyframes floatBg{
+  from{transform:translateY(0)}
+  to{transform:translateY(-40px)}
+}

@@ -8,18 +8,15 @@
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 20% 20%, #111, transparent 40%),
-    radial-gradient(circle at 80% 80%, #050505, transparent 40%),
-    #000;
-  color: #fff;
+  background: #000;
   display: flex;
   justify-content: center;
   padding: 20px 0;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* STARS */
+/* Фон со звездами */
 .stars {
   position: fixed;
   inset: 0;
@@ -28,7 +25,7 @@ body {
     radial-gradient(1px 1px at 80% 70%, #aaa, transparent),
     radial-gradient(1px 1px at 50% 50%, #fff, transparent);
   opacity: .35;
-  animation: starsMove 25s linear infinite;
+  animation: starsMove 30s linear infinite;
   pointer-events: none;
 }
 
@@ -48,6 +45,16 @@ body {
   backdrop-filter: blur(14px);
   box-shadow: 0 20px 55px rgba(0,0,0,.9);
   animation: cardGlow 4s ease-in-out infinite;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card.fade-in {
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes cardGlow {
@@ -81,17 +88,13 @@ body {
   left: 50%;
   transform: translateX(-50%);
   object-fit: cover;
-  animation: float 6s ease-in-out infinite, pulse 2.5s infinite;
 }
 
-@keyframes float {
-  50% { transform: translateX(-50%) translateY(-8px); }
-}
+.float { animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateX(-50%) translateY(-8px); } }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255,255,255,.6); }
-  70% { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
-}
+.pulse { animation: pulse 2.5s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,249,255,.6); } 70% { box-shadow: 0 0 0 14px rgba(0,249,255,0); } }
 
 /* BODY */
 .body {
@@ -106,6 +109,18 @@ body {
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
+  opacity: 0;
+  animation: slideInRight 0.8s forwards;
+}
+
+.slide-in { animation: slideInRight 0.8s forwards; }
+.slide-in-delay { animation: slideInRight 0.8s 0.3s forwards; }
+.slide-in-delay2 { animation: slideInRight 0.8s 0.6s forwards; }
+.slide-in-delay3 { animation: slideInRight 0.8s 0.9s forwards; }
+
+@keyframes slideInRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 .name {
@@ -114,12 +129,7 @@ body {
   background: linear-gradient(90deg, #fff, #00f9ff, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: nameGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes nameGlow {
-  from { text-shadow: 0 0 6px rgba(0,249,255,.4); }
-  to   { text-shadow: 0 0 16px rgba(0,249,255,.8); }
+  text-shadow: 0 0 8px rgba(0,249,255,.5);
 }
 
 .verified {
@@ -176,7 +186,7 @@ body {
   box-shadow: 0 0 22px rgba(0,249,255,.6);
 }
 
-/* MEDIA QUERIES — телефоны */
+/* MEDIA QUERIES */
 @media (max-width: 420px) {
   .card { width: 95%; }
   .name { font-size: 20px; }

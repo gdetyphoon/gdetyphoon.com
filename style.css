@@ -44,7 +44,7 @@ body {
   border-radius: 22px;
   overflow: hidden;
   position: relative;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.1);
   backdrop-filter: blur(14px);
   box-shadow: 0 20px 55px rgba(0,0,0,.9);
 }
@@ -105,49 +105,80 @@ body {
   color: #aaa;
 }
 
-/* NOTICE BLOCK */
+/* NOTICE */
 .notice {
-  margin: 18px 0;
+  margin: 20px 0;
   padding: 16px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.12);
+  font-size: 13.5px;
+  line-height: 1.65;
   text-align: left;
-  font-size: 13px;
-  line-height: 1.6;
 }
 
-.notice-title {
+.notice-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 10px;
+  letter-spacing: .12em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.15);
   font-weight: 700;
-  margin-bottom: 8px;
 }
 
-.notice-title span {
-  color: #fff;
-  text-shadow: 0 0 6px rgba(255,255,255,.6);
+.author {
+  font-size: 12px;
+  opacity: .75;
 }
 
-.notice-text span {
-  color: #fff;
+.notice-main span {
   font-weight: 600;
+  color: #fff;
 }
 
-.notice-warning {
-  margin-top: 10px;
-  font-weight: 700;
+.notice-main b {
   color: #ffb3b3;
 }
 
-.notice-list {
-  margin: 8px 0 8px 16px;
+.notice-details summary {
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  list-style: none;
+  opacity: .85;
 }
 
-.notice-list li {
+.notice-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.notice-details summary::after {
+  content: " ▾";
+  opacity: .6;
+}
+
+.notice-details[open] summary::after {
+  content: " ▴";
+}
+
+.notice-details ul {
+  margin: 10px 0 6px 16px;
+}
+
+.notice-details li {
   margin-bottom: 6px;
 }
 
-.notice-footer {
-  margin-top: 8px;
+.notice-final {
+  margin-top: 6px;
   font-weight: 600;
   text-align: center;
   opacity: .85;
@@ -165,7 +196,7 @@ body {
   height: 56px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,.2);
-  background: transparent url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center / 60% no-repeat;
+  background: transparent url("https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg") center / 60% no-repeat;
   transition: transform .3s, box-shadow .3s;
 }
 

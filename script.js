@@ -1,63 +1,70 @@
+/* ===== MUSIC ===== */
 const audio = document.getElementById("music");
 const btn = document.getElementById("playBtn");
 
-// пробуем автозапуск
 window.addEventListener("load", () => {
-  const playPromise = audio.play();
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => {
-        btn.textContent = "❚❚";
-      })
-      .catch(() => {
-        // браузер запретил — ждём клик
-        btn.textContent = "▶";
-      });
-  }
+  const p = audio.play();
+  if (p) p.then(()=>btn.textContent="❚❚").catch(()=>btn.textContent="▶");
 });
 
-// кнопка play/pause
 btn.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    btn.textContent = "❚❚";
-  } else {
-    audio.pause();
-    btn.textContent = "▶";
-  }
+  if (audio.paused){ audio.play(); btn.textContent="❚❚"; }
+  else{ audio.pause(); btn.textContent="▶"; }
 });
 
 /* ===== COMMENTS (localStorage) ===== */
 const form = document.getElementById("commentForm");
 const list = document.getElementById("commentList");
-
-let comments = JSON.parse(localStorage.getItem("comments") || "[]");
+let comments = JSON.parse(localStorage.getItem("comments")||"[]");
 
 function renderComments(){
-  list.innerHTML = "";
+  list.innerHTML="";
   comments.forEach(c=>{
-    const div = document.createElement("div");
-    div.className = "comment";
-    div.innerHTML = `
+    const d=document.createElement("div");
+    d.className="comment";
+    d.innerHTML=`
       <div class="comment-head">
         <div class="author">${c.name}</div>
         <div class="date">${c.date}</div>
       </div>
-      <div class="text">${c.text}</div>
-    `;
-    list.appendChild(div);
+      <div class="text">${c.text}</div>`;
+    list.appendChild(d);
   });
 }
 renderComments();
 
-form.addEventListener("submit", e=>{
+form.addEventListener("submit",e=>{
   e.preventDefault();
-  const name = document.getElementById("name").value;
-  const text = document.getElementById("text").value;
-  const now = new Date().toLocaleString();
-
-  comments.push({name,text,date:now});
-  localStorage.setItem("comments", JSON.stringify(comments));
+  const name=document.getElementById("name").value;
+  const text=document.getElementById("text").value;
+  const date=new Date().toLocaleString();
+  comments.push({name,text,date});
+  localStorage.setItem("comments",JSON.stringify(comments));
   renderComments();
   form.reset();
 });
+
+/* ===== PARTICLES EFFECT ===== */
+const pBox = document.getElementById("particles");
+for(let i=0;i<30;i++){
+  const s=document.createElement("span");
+  const size=Math.random()*3+1;
+  s.style.position="absolute";
+  s.style.width=size+"px";
+  s.style.height=size+"px";
+  s.style.background="rgba(255,255,255,.5)";
+  s.style.borderRadius="50%";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.animation=`float ${Math.random()*20+10}s linear infinite`;
+  pBox.appendChild(s);
+}
+
+/* inject keyframes */
+const st=document.createElement("style");
+st.innerHTML=`
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-120vh)}
+}`;
+document.head.appendChild(st);

@@ -37,8 +37,7 @@ audio.addEventListener("timeupdate", () => {
 progressContainer.addEventListener("click", e => {
   const width = progressContainer.clientWidth;
   const clickX = e.offsetX;
-  const newTime = (clickX / width) * audio.duration;
-  audio.currentTime = newTime;
+  audio.currentTime = (clickX / width) * audio.duration;
 });
 
 // Формат времени мм:сс
@@ -86,11 +85,11 @@ form.addEventListener("submit", e => {
 // ===========================
 // AVATAR — статический с GitHub
 // ===========================
-const avatar = document.getElementById("avatar");
+const avatar = document.querySelector(".avatar");
 avatar.src = "https://gdetyphoon.github.io/photo/avatar.jpg";
 
 // ===========================
-// PARTICLES — красивый фон
+// PARTICLES — фоновые частицы
 // ===========================
 const pBox = document.getElementById("particles");
 for (let i = 0; i < 30; i++) {

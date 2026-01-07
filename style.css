@@ -150,90 +150,6 @@ body {
   transition: all .4s ease;
 }
 
-/* NOTICE HEAD */
-.notice-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.badge {
-  font-size: 10px;
-  letter-spacing: .12em;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.1);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.author {
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-  opacity: .75;
-}
-
-/* NOTICE MAIN */
-.notice-main b,
-.notice-main .highlight {
-  color: #00f9ff;
-  font-weight: 700;
-  text-shadow: 0 0 8px #00f9ff, 0 0 16px rgba(0,249,255,.3);
-}
-
-/* NOTICE DETAILS */
-.notice-details summary {
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 10px;
-  list-style: none;
-  opacity: .85;
-  transition: color .3s;
-}
-
-.notice-details summary:hover {
-  color: #00f9ff;
-}
-
-.notice-details summary::-webkit-details-marker { display: none; }
-
-.notice-details summary::after {
-  content: " ▾";
-  opacity: .6;
-}
-
-.notice-details[open] summary::after {
-  content: " ▴";
-}
-
-.notice-details ul {
-  margin: 10px 0 6px 18px;
-  list-style: none;
-  counter-reset: list;
-}
-
-.notice-details li {
-  margin-bottom: 6px;
-  position: relative;
-  padding-left: 22px;
-}
-
-.notice-details li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #00f9ff;
-}
-
-.notice-final {
-  margin-top: 8px;
-  font-weight: 600;
-  text-align: center;
-  opacity: .85;
-}
-
 /* TELEGRAM BUTTON */
 .tg-wrap {
   display: flex;
@@ -255,7 +171,7 @@ body {
   box-shadow: 0 0 22px rgba(0,249,255,.6);
 }
 
-/* MEDIA QUERIES — для мобильных */
+/* MEDIA QUERIES */
 @media (max-width: 420px) {
   .card { width: 95%; }
   .name { font-size: 22px; }

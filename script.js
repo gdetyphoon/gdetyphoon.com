@@ -1,25 +1,19 @@
-// MUSIC
+// MUSIC — включение только по кнопке
 const audio = document.getElementById("music");
 const btn = document.getElementById("playBtn");
 
-// Пытаемся автозапустить музыку при загрузке
-window.addEventListener("load", () => {
-  const p = audio.play();
-  if (p) p.then(() => btn.textContent = "❚❚").catch(() => btn.textContent = "▶");
-});
-
-// Кнопка play/pause
+// Сбрасываем автозапуск, чтобы кнопка точно работала
 btn.addEventListener("click", () => {
   if (audio.paused) {
-    audio.play().catch(() => alert("Браузер блокирует автозапуск музыки. Нажмите ещё раз."));
-    btn.textContent = "❚❚";
+    audio.play().catch(() => alert("Браузер блокирует воспроизведение музыки. Нажмите ещё раз."));
+    btn.textContent = "❚❚"; // пауза
   } else {
     audio.pause();
-    btn.textContent = "▶";
+    btn.textContent = "▶"; // play
   }
 });
 
-// COMMENTS
+// COMMENTS — сохраняются в localStorage
 const form = document.getElementById("commentForm");
 const list = document.getElementById("commentList");
 let comments = JSON.parse(localStorage.getItem("comments") || "[]");
@@ -52,11 +46,11 @@ form.addEventListener("submit", e => {
   form.reset();
 });
 
-// AVATAR (статический, берётся с GitHub, без загрузки)
+// AVATAR — статический с GitHub
 const avatar = document.getElementById("avatar");
-avatar.src = "https://gdetyphoon.github.io/photo/avatar.jpg"; // статический аватар
+avatar.src = "https://gdetyphoon.github.io/photo/avatar.jpg";
 
-// PARTICLES
+// PARTICLES — красивый фон
 const pBox = document.getElementById("particles");
 for (let i = 0; i < 30; i++) {
   const s = document.createElement("span");

@@ -1,126 +1,144 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
-body{
-  min-height:100vh;
-  background:radial-gradient(circle at top,#0b0b0b,#050505 60%,#000);
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  padding:20px 0;
-  overflow-x:hidden;
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b0b0b, #050505 60%, #000);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  overflow-x: hidden;
 }
 
 /* particles */
-#particles{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* card */
-.card{
-  width:100%;
-  max-width:380px;
-  background:linear-gradient(180deg,#0a0a0a,#111,#0a0a0a);
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,.8);
-  position:relative;
-  z-index:1;
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: linear-gradient(180deg,#0a0a0a,#111,#0a0a0a);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,.8);
+  position: relative;
+  z-index: 1;
 }
-.glow{
-  animation:cardGlow 4s ease-in-out infinite;
+.glow {
+  animation: cardGlow 4s ease-in-out infinite;
 }
-@keyframes cardGlow{
-  0%,100%{box-shadow:0 0 20px rgba(255,255,255,.05),0 15px 40px rgba(0,0,0,.8)}
-  50%{box-shadow:0 0 35px rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.9)}
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255,255,255,.05),0 15px 40px rgba(0,0,0,.8);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.9);
+  }
 }
 
 /* header */
-.header{
-  height:160px;
+.header {
+  height: 160px;
   background:
     radial-gradient(circle at top left,#444,#000 60%),
     linear-gradient(135deg,#000,#222);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Видео за аватаркой */
+.avatar-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  z-index: 0;
+}
+
+.avatar-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* avatar */
-.avatar{
-  width:96px;
-  height:96px;
-  border-radius:50%;
-  border:3px solid #fff;
-  position:absolute;
-  top:110px;
-  left:50%;
-  transform:translateX(-50%);
-  object-fit:cover;
-  z-index:2;
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  z-index: 2;
 }
-.pulse{
-  animation:pulse 2.5s infinite;
+.pulse {
+  animation: pulse 2.5s infinite;
 }
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}
-  70%{box-shadow:0 0 0 18px rgba(255,255,255,0)}
-  100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,.6); }
+  70% { box-shadow: 0 0 0 18px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
 }
 
 /* body */
-.body{
-  padding:70px 20px 20px;
-  text-align:center;
+.body {
+  padding: 70px 20px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
-.name{font-size:26px;font-weight:700}
-.subtitle{margin-top:6px;font-size:13px;color:#aaa}
-.desc{font-size:14px;line-height:1.6;color:#ddd;margin:18px 0 14px}
-.neon-text{text-shadow:0 0 6px rgba(255,255,255,.6),0 0 12px rgba(255,255,255,.4);}
-
-/* glass */
-.glass{
-  background:rgba(20,20,20,.7);
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:15px;
-}
+.name { font-size: 26px; font-weight: 700; }
+.subtitle { margin-top: 6px; font-size: 13px; color: #aaa; }
+.desc { font-size: 14px; line-height: 1.6; color: #ddd; margin: 18px 0 14px; }
+.neon-text { text-shadow: 0 0 6px rgba(255,255,255,.6),0 0 12px rgba(255,255,255,.4); }
 
 /* telegram */
-.tg-wrap{
-  display:flex;
-  justify-content:center;
-  margin:18px 0;
+.tg-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 18px;
 }
-.tg-btn{
-  width:54px;
-  height:54px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  background:transparent; /* прозрачная кнопка */
-  border:none;
-  cursor:pointer;
+.tg-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.tg-btn .tg-icon{
-  width:60%; /* размер иконки */
-  height:60%;
+.glow-btn {
+  position: relative;
 }
-.glow-btn{
-  position:relative;
-}
-.glow-btn::after{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  border-radius:inherit;
-  background:linear-gradient(45deg,#fff,#888,#fff);
-  opacity:.15;
-  filter:blur(8px);
-  z-index:-1;
+.glow-btn::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg,#fff,#888,#fff);
+  opacity: .15;
+  filter: blur(8px);
+  z-index: -1;
 }

@@ -139,15 +139,47 @@ footer p {
    МОБИЛЬНАЯ АДАПТАЦИЯ
 ========================= */
 @media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
   .profile,
   .profile-container,
   .main,
   .wrapper {
     border-radius: 22px;
     padding: 16px;
+    width: 100%;
+    margin: 0;
   }
 
-  footer {
-    padding: 12px;
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p, span, small {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  footer h2 {
+    font-size: 1.3rem;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+
+  hr {
+    margin: 10px 0;
   }
 }

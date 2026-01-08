@@ -373,3 +373,40 @@ body {
     margin-left: 6px;
     color: rgba(255, 255, 255, 0.35);
 }
+
+.name-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.name-wrapper .nick {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    90deg,
+    #1e90ff,
+    #00bfff,
+    #ffd700
+  );
+  background-size: 200% 200%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: flow 4s ease infinite;
+
+  white-space: nowrap;
+  user-select: none;
+}
+
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

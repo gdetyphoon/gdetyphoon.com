@@ -178,9 +178,9 @@ body {
 /* NOTICE MAIN */
 .notice-main b,
 .notice-main .highlight {
-  color: #B22222;
+  color: #8B0000;
   font-weight: 700;
-  text-shadow: 0 0 8px #00f9ff, 0 0 16px rgba(0,249,255,.3);
+  text-shadow: 0 0 8px #FF0000, 0 0 16px rgba(0,249,255,.3);
 }
 
 /* NOTICE DETAILS */

@@ -301,22 +301,24 @@ body {
 }
 
 .watch-btn {
+    display: inline-block;
     background: linear-gradient(135deg, #000, #222);
     color: #fff;
     font-size: 16px;
     padding: 12px 28px;
-    border: none;
     border-radius: 30px;
-    cursor: pointer;
+    text-decoration: none;
     font-weight: 600;
     letter-spacing: 0.5px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
+    cursor: pointer;
 
     /* РАСПОЛОЖЕНИЕ */
     position: absolute;
     bottom: 20px;
     right: 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 .watch-btn:hover {

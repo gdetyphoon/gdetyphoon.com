@@ -378,14 +378,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
+  gap: 6px;
+  margin-bottom: 6px;
+  padding: 0 10px; /* чтобы не упиралось в края экрана */
 }
 
 .name-wrapper .nick {
-  font-size: 14px;
+  font-size: 16px; /* чуть больше для мобильного */
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 
   background: linear-gradient(
@@ -399,14 +400,22 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: flow 4s ease infinite;
-
+  animation: flow 3s ease infinite; /* чуть быстрее для мобильного */
   white-space: nowrap;
   user-select: none;
 }
 
+/* Анимация перелива */
 @keyframes flow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Адаптация под маленькие экраны */
+@media (max-width: 480px) {
+  .name-wrapper .nick {
+    font-size: 14px; /* чуть меньше, чтобы помещалось */
+    letter-spacing: 0.8px;
+  }
 }

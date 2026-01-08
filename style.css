@@ -299,3 +299,32 @@ body {
 .profile-btn:active{
   transform:scale(.95);
 }
+
+.watch-btn {
+    background: linear-gradient(135deg, #000, #222);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+
+    /* РАСПОЛОЖЕНИЕ */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.watch-btn:hover {
+    background: linear-gradient(135deg, #111, #333);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.watch-btn:active {
+    transform: scale(0.96);
+}

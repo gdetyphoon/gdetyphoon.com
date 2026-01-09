@@ -428,39 +428,37 @@ body {
   z-index: 9999;
 }
 
+/* === ОБЁРТКА === */
+.tt-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 /* === КНОПКА === */
 .tt-btn {
-  display: block;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-
-  background: url("photo/tiktok.png") center / cover no-repeat;
-  background-color: #000;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.6),
-    0 0 14px rgba(255, 215, 0, 0.6);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent url("photo/tiktok.png") center / 60% no-repeat;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 /* === ЭФФЕКТЫ === */
 .tt-btn:hover {
-  transform: scale(1.08);
-  box-shadow:
-    0 12px 26px rgba(0, 0, 0, 0.8),
-    0 0 20px rgba(29, 161, 242, 0.8);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 22px rgba(29, 161, 242, 0.6);
 }
 
 .tt-btn:active {
-  transform: scale(0.94);
+  transform: scale(1.05);
 }
 
 /* 📱 МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 480px) {
   .tt-btn {
-    width: 52px;
-    height: 52px;
+    width: 45px;
+    height: 45px;
   }
 }
